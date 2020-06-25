@@ -1,0 +1,16 @@
+// Saves the text field data to a JSON file
+var saveData = function(req, res, next) {
+    info[0] = req.body.id; // Stores ID to first spot in info array
+    info[1] = req.body.name; // Stores name to second spot in info array
+    info[2] = req.body.text; // Stores text to third spot in info array
+    info[3] = req.body.email; // Stores email to fourth spot in info array
+    dateUTC = new Date().toUTCString();
+    // Writes text JSON data to a file whose name is set to the current date/timestamp
+    let file = editJsonFile(dateUTC + ".json");
+    file.set("ID", info[0]);
+    file.set("Name", info[1]);
+    file.set("Text", info[2]);
+    file.save();
+    writeStatus = "Success: your data has been stored.";
+    next();
+}

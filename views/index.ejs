@@ -1,0 +1,41 @@
+<% if (!user) { %>
+	<h2><center>Welcome! Please log in.</center></h2>
+	<div style="text-align:center">
+		<a href="/login">Log In</a>
+	  </div>
+
+<% } else { %>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>BI Upload Portal</title>
+			<link rel="stylesheet" type="text/css" href="style.css">
+		</head>
+		<body>
+			<div class="topnav">
+				<img src="sampleimage.png" alt="BI Logo" class="center">
+			</div>
+			<div id="uploadform">
+				<br>
+				<h1><center>Client Data Upload Portal</center></h1>
+				<br>
+				<form id="textupload" action="/processupload" method="POST" enctype="multipart/form-data">
+					<center>ID Number: <input type="text" name="id" placeholder="Enter ID here." value="" required/></center>
+					<br> <br>
+					<center>Name: <input type="text" name="name" placeholder="Enter name here." value="" required/></center>
+					<br> <br>
+					<center>Text: <input type="text" name="text" placeholder="Enter text here." value="" required/></center>
+					<br> <br>
+					<center>Image: <input type="file" name="image" required/></center>
+					<br> <br>
+					<center>CSV File: <input type="file" name="csv" required/></center>
+					<br> <br>
+					<center>Email: <input type="email" name="email" placeholder="Enter email here." value="" required/></center>
+					<br> <br>
+					<center><input type="submit" value="Upload"/></center>
+				</form>
+			</div>
+		</body>
+		</html>
+<% } %>
