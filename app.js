@@ -251,7 +251,8 @@ var transporter = nodemailer.createTransport({ // specify credentials for 'from'
 // Saves text as a JSON in Azure Blob Storage container 1
 // Reference: https://github.com/richardgirges/express-fileupload/tree/master/example#multi-file-upload
 var uploadToAzure = async function(req, res, next) {
-    var userID = req.user.oid;
+    var userID = req.user.displayName;
+    //console.log(userID);
     info[0] = req.body.id; // Stores ID to first spot in info array
     info[1] = req.body.name; // Stores name to second spot in info array
     info[2] = req.body.text; // Stores text to third spot in info array
