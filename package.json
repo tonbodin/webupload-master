@@ -32,7 +32,7 @@
     "passport-azure-ad": "^4.2.1",
     "python": "0.0.4",
     "python-shell": "^1.0.8",
-    "xlsx": "^0.15.6",
+    "xlsx": "^0.17.0",
     "zebras": "0.0.18"
   },
   "devDependencies": {
